@@ -10,11 +10,193 @@
 ✦ is-liked — для обозначения состояния лайкнутой иконки в виде сердца
 ✦ button__text — для обозначения текстового элемента внутри кнопки
 
-Кроме этого, не меняйте HTML переключателя тем. Его разметка также гарантирует работу своего скрипта.
+Кроме этого, не меняйте HTML переключателя тем. Его разметка также гарантирует работу своего скрипта.*/
 
-*/
+.pixel-perfect-image {
+  position: absolute;
+  width: 1440px;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0.2;
+  filter: sepia(0.6);
+}
 
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  font-variation-settings: 700;
+  background: var(--background-gradient);
+  background-attachment: fixed;
+  background-size: cover;
+  font-family: var(--font-main);
+}
+
+.header {
+  margin-inline: auto;
+  margin-block-start: 100px;
+  margin-block-end: 100px;
+  max-inline-size: clamp(375px, 48.6vw, 100vw);
+  border: 2px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--background-color);
+  font-family: var(--font-accent);
+}
+
+.header__title {
+  margin-block-start: 136px;
+  font-size: clamp(2.75rem, 2.375rem + 1.875vw, 4.0625rem);
+  line-height: clamp(2.75rem, 2.375rem + 1.875vw, 4.0625rem);
+  color: var(--accent-color);
+}
+
+.header__subtitle {
+  margin-block-start: 20px;
+  font-size: clamp(0.875rem, 0.7143rem + 0.8036vw, 1.4375rem);
+  line-height: clamp(0.875rem, 0.7143rem + 0.8036vw, 1.4375rem);
+  text-transform: uppercase;
+  color: var(--accent-color);
+}
+
+.header__theme-menu {
+  margin-block-start: 23px;
+  font-size: 14px;
+  margin-inline-start: 18px;
+  margin-block-end: 22px;
+}
+
+.theme-menu__list {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  color: var(--accent-color);
+}
+
+.theme-menu__button {
+  appearance: none;
+  background-color: transparent;
+  border: none;
+  text-transform: uppercase;
+  cursor: pointer;
+  position: relative;
+}
+
+.theme-menu__button:disabled {
+  opacity: 60%;
+  cursor: default;
+}
+
+.theme-menu__button:disabled::before {
+  content: "▶";
+  position: absolute;
+  animation: .5s linear infinite alternate activeBtn;
+}
+
+@keyframes activeBtn {
+  0% {
+    left: -18px;
+  }
+
+  100% {
+    left: -14px;
+  }
+}
+
+.card {
+  margin-inline: auto;
+  margin-block-end: 50px;
+  max-inline-size: clamp(375px, 48.5vw, 100vw);
+  border: 2px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  background-color: var(--background-color);
+
+}
+
+.card__title {
+  padding-block: 5px;
+  margin-inline: 10px;
+  font-size: 18px;
+  font-weight: var(--font-weight-title);
+  line-height: 21.78px;
+  color: var(--accent-color);
+}
+
+.card__image {
+  object-fit: cover;
+  inline-size: 100%;
+  block-size: clamp(375px, 48.5vw, 100vw);
+  border-top: 2px solid var(--border-color);
+  border-bottom: 2px solid var(--border-color);
+}
+
+.card__content-text {
+  margin-block-start: 27px;
+  margin-inline: 25px;
+  font-size: 18px;
+  line-height: 21px;
+  font-family: inherit;
+  font-weight: var(--font-weight-text);
+  color: var(--accent-color);
+}
+
+.card__content-text:last-of-type {
+  margin-block-end: 25px;
+}
+
+.card__buttons-container {
+  display: flex;
+  margin-inline-end: 25px;
+  margin-block-end: 20px;
+  justify-content: end;
+  gap: 5px;
+}
+
+.button {
+  appearance: none;
+  background-color: #FFF;
+  cursor: pointer;
+  border: none;
+  padding: 0;
+}
+
+.save_button {
+  margin-block-end: 100px;
+  border: 2px solid var(--border-color);
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+}
+
+.card__icon-button {
+  margin-block-start: 3px;
+}
+
+.card__like-button {
+  inline-size: 130px;
+  block-size: 38px;
+  border: 2px solid var(--border-color);
+  padding-block-start: 2px;
+}
+
+.sparks {
+  opacity: 100%;
+}
+
+.button__text {
+  font-family: var(--font-accent);
+  font-size: 14px;
+  line-height: 12.6px;
+  color: var(--accent-color);
+}
+
+
+@media (width <=375px) {
+  .header {
+    max-inline-size: 100%;
+  }
 }
