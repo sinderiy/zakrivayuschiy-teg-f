@@ -20,5 +20,6 @@
     --watermark-outline-color: #FFF;
     --dialog-background-color: #000;
 
-
+    --image-filter: invert(1) contrast(1.2);
+    
 }

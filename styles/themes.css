@@ -12,6 +12,7 @@
     linear-gradient(to bottom, #007F0C, #004306);
   --watermark-outline-color: #000;
   --dialog-background-color: #000;
+  --image-filter: hue-rotate(90deg) contrast(1.2);
 }
 
 :root.theme-light {
@@ -29,6 +30,7 @@
   --like-fill-color: #FF0000;
   --watermark-outline-color: #FFF;
   --dialog-background-color: #000;
+  --image-filter: invert(1) contrast(1.2);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -46,5 +48,6 @@
       linear-gradient(to bottom, #007F0C, #004306);
     --watermark-outline-color: #000;
     --dialog-background-color: #000;
+    --image-filter: hue-rotate(90deg) contrast(1.2);
   }
 }
