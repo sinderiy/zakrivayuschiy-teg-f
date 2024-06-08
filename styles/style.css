@@ -245,7 +245,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  inline-size: clamp(310px, 335px, 335px);
+  inline-size: 335px;
   block-size: 55px;
   margin-inline: auto;
   margin-block-end: 100px;
@@ -388,6 +388,7 @@ dialog::backdrop {
   .save_button {
     flex-direction: column;
     block-size: 84px;
+    inline-size: 306px;
     padding-block: 15px;
   }
 
